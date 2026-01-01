@@ -183,6 +183,8 @@ export function renderOrderSummary(){
         quantityLabel.innerHTML = newQuantity;
 
         updateCartQuantity();
+        renderOrderSummary();
+        renderPaymentSummary();
       });
     });
 
@@ -214,6 +216,8 @@ export function renderOrderSummary(){
           quantityLabel.innerHTML = newQuantity;
 
           updateCartQuantity();
+          renderOrderSummary();
+          renderPaymentSummary();
         }
       });
     });
