@@ -4,6 +4,7 @@ import formatCurrency from '../../scripts/utils/money.js';
 import dayjs from 'https://unpkg.com/dayjs@1.11.10/esm/index.js';
 import {deliveryOptions, getDeliveryOption} from '../../data/deliveryOptions.js';
 import {renderPaymentSummary} from './paymentSummary.js';
+import {renderCheckoutHeader} from './checkoutHeader.js';
 
 export function renderOrderSummary(){
 
@@ -122,6 +123,7 @@ export function renderOrderSummary(){
               
               renderPaymentSummary();
               renderOrderSummary();
+              renderCheckoutHeader();
           });
       });
 
@@ -133,6 +135,7 @@ export function renderOrderSummary(){
   }
 
   updateCartQuantity()
+  renderCheckoutHeader();
 
   document.querySelectorAll('.js-update-link')
     .forEach((link) => {
@@ -180,6 +183,7 @@ export function renderOrderSummary(){
         updateCartQuantity();
         renderOrderSummary();
         renderPaymentSummary();
+        renderCheckoutHeader();
       });
     });
 
@@ -213,6 +217,7 @@ export function renderOrderSummary(){
           updateCartQuantity();
           renderOrderSummary();
           renderPaymentSummary();
+          renderCheckoutHeader();
         }
       });
     });
