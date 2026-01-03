@@ -1,3 +1,5 @@
+import { validDeliveryOption } from './deliveryOptions.js';
+
 // To access cart in 'amazon.js' file
 export let cart;
 
@@ -93,8 +95,10 @@ export function updateDeliveryOption(productId, deliveryOptionId) {
     }
   });
 
-  if (matchingItem) {
-    matchingItem.deliveryOptionId = deliveryOptionId;
-    saveToStorage();
+  if (!matchingItem || !validDeliveryOption(deliveryOptionId)) {
+    return;
   }
+
+  matchingItem.deliveryOptionId = deliveryOptionId;
+  saveToStorage();
 }

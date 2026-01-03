@@ -21,7 +21,7 @@ export function renderPaymentSummary(){
     const totalCents = totalBeforeTaxCents + taxCents;
 
     const paymentSummaryHTML = `
-          <div class="payment-summary-title">
+          <div class="payment-summary-title js-payment-summary-title">
             Payment Summary
           </div>
 
@@ -32,7 +32,7 @@ export function renderPaymentSummary(){
 
           <div class="payment-summary-row">
             <div>Shipping &amp; handling:</div>
-            <div class="payment-summary-money">$${formatCurrency(shippingPriceCents)}</div>
+            <div class="payment-summary-money js-payment-summary-shipping-price">$${formatCurrency(shippingPriceCents)}</div>
           </div>
 
           <div class="payment-summary-row subtotal-row">
@@ -47,7 +47,7 @@ export function renderPaymentSummary(){
 
           <div class="payment-summary-row total-row">
             <div>Order total:</div>
-            <div class="payment-summary-money">$${formatCurrency(totalCents)}</div>
+            <div class="payment-summary-money js-payment-summary-total">$${formatCurrency(totalCents)}</div>
           </div>
 
           <button class="place-order-button button-primary">
