@@ -107,7 +107,6 @@ export function loadCart(fun) {
   const request = new XMLHttpRequest();
 
   request.addEventListener('load', () => {
-    console.log(request.response);
     if (request.response !== 'load cart') {
       cart = JSON.parse(request.response);
     }

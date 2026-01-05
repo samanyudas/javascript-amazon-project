@@ -119,9 +119,6 @@ export function renderOrderSummary(){
       .innerHTML = `${cartQuantity} items`;
   }
 
-  updateCartQuantity()
-  renderCheckoutHeader();
-
   document.querySelectorAll('.js-update-link')
     .forEach((link) => {
       link.addEventListener('click', () => {

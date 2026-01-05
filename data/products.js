@@ -105,7 +105,6 @@ export function loadProductsFetch() {
      }
       return new Product(productDetails);
     });
-    console.log(products);
   });
 
   return promise;
