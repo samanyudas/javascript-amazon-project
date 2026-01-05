@@ -107,5 +107,5 @@ class Cart {
 const cart = new Cart('cart-oop');
 const businessCart = new Cart('business-cart-oop');
 
-console.log(cart);
-console.log(businessCart);    
+// console.log(cart);
+// console.log(businessCart);    
