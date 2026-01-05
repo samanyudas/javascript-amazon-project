@@ -37,7 +37,7 @@ class Product {
   }
 
   getPrice(){
-    return `$${formatCurrency(this.priceCents)}`;
+    return `$${formatCurrency(this.priceCents)}`;  
   }
 
   extraInfoHTML(){
@@ -61,6 +61,28 @@ class Clothing extends Product {
     `;
   }
 };
+
+class Appliance extends Product {
+  instructionsLink;
+  warrantyLink;
+ 
+  constructor(productDetails) {
+    super(productDetails);
+    this.instructionsLink = productDetails.instructionsLink;
+    this.warrantyLink = productDetails.warrantyLink;
+  }
+
+  extraInfoHTML(){
+    return `
+      <a href="${this.instructionsLink}" target="../images/appliance-instructions.png">
+        Instructions
+      </a>
+      <a href="${this.warrantyLink}" target="../images/appliance-warranty.png">
+        Warranty
+      </a>
+    `; 
+  }
+}
 
 export const products = [
   {
@@ -725,5 +747,12 @@ export const products = [
   if (productDetails.type === "clothing"){
     return new Clothing(productDetails);
   }
+  else if(productDetails.type === "appliances" || (productDetails.keywords.includes('appliances'))) {
+    productDetails.instructionsLink = 
+    'images/appliance-instructions.png';
+    productDetails.warrantyLink = 
+   'images/appliance-warranty.png';
+    return new Appliance(productDetails);
+ }
   return new Product(productDetails);
 });
